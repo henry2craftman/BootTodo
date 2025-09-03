@@ -112,6 +112,7 @@ dotnet build
 # Run the application
 dotnet run
 ```
+---
 
 ## ⌨️ How to Use
 
@@ -132,6 +133,49 @@ Once the application is running, you will be greeted with the main menu.
 -   When you are finished, type `quit` on a new line and press `Enter`.
 -   Your entry will be saved locally and then a formatted version will be sent to your Google Doc.
 
+---
+
+## 🚀 Making the App Start Automatically
+
+To get the full "MorningTodo" experience, you should set the app to launch automatically when your computer starts. Here’s how to do it.
+
+### Step 1: Publish the Application
+
+First, you need to create a standalone, optimized version of the app. Open your terminal or command prompt in the project's root directory and run the following command:
+
+```bash
+dotnet publish -c Release --self-contained
+```
+
+This command will create a `publish` folder inside `bin/Release/netX.X/`. This folder contains the executable file (`MorningTodo.exe` on Windows, `MorningTodo` on macOS) and all its dependencies.
+
+### Step 2: Set Up Autostart for Your OS
+
+Now, follow the instructions for your operating system.
+
+#### For Windows 
+
+We'll use the Startup folder, which is the easiest method.
+
+1.  Press the **`Win + R`** keys to open the **Run** dialog box.
+2.  Type `shell:startup` and press **Enter**. This will open the Startup folder in File Explorer.
+3.  Navigate to the `publish` folder that was created in Step 1 (e.g., `.../MorningTodo/bin/Release/net8.0/publish/`).
+4.  Right-click on the **`MorningTodo.exe`** file and select **"Create shortcut"**.
+5.  Drag and drop this newly created shortcut into the Startup folder you opened in step 2.
+
+That's it! The next time you log in to Windows, MorningTodo will start automatically.
+
+#### For macOS
+
+We'll add the application to your Login Items.
+
+1.  Open **System Settings** (on macOS Ventura or newer) or **System Preferences** (on older versions).
+2.  Go to **General** > **Login Items** (on newer macOS) or **Users & Groups** > **Login Items** tab (on older macOS).
+3.  Click the plus (`+`) button under the list of applications.
+4.  A file dialog will appear. Navigate to the `publish` folder that was created in Step 1.
+5.  Select the **`MorningTodo`** executable file (it will not have a `.exe` extension) and click **"Add"**.
+
+The application will now appear in the list and will launch automatically whenever you log in.
 ## 🤝 Contributing
 
 Contributions are welcome! If you have ideas for new features or improvements, feel free to fork the repository, make your changes, and submit a pull request.
