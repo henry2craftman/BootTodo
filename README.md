@@ -101,81 +101,81 @@ cd BootTodo
     private static readonly string AppScriptUrl = "PASTE_YOUR_WEB_APP_URL_HERE";
     ```
 
-### 4. Build and Run
+---
 
-You are now ready to go!
+## 🚀 Getting Started: Building and Running the App
+
+### Step 1: Publish the Application
+
+First, create a standalone, optimized version of the app. This packages everything into a single folder that can be run anywhere.
+
+Open your terminal in the project's root directory and run:
 
 ```bash
-# Build the project
-dotnet build
-
-# Run the application
-dotnet run
+# This creates a 'publish' folder with the executable and all dependencies.
+dotnet publish -c Release --self-contained
 ```
+
+After the command finishes, you will find a `publish` folder inside `bin/Release/netX.X/`.
+
+### Step 2: Run the Published Application
+
+**Important:** After publishing, you must run the executable file directly. Do not use `dotnet run`.
+
+1.  Navigate into the `publish` folder using your terminal:
+    ```bash
+    # Example path - adjust to your actual .NET version
+    cd bin/Release/net8.0/publish
+    ```
+2.  Run the executable:
+    -   **On Windows:** `BootTodo.exe`
+    -   **On macOS/Linux:** `./BootTodo` (you may need to run `chmod +x BootTodo` first to make it executable)
+
 ---
 
 ## ⌨️ How to Use
 
-Once the application is running, you will be greeted with the main menu.
+### Application Features
 
-### Main Menu
+-   **Main Menu:**
+    -   **1. Write Diary:** Start writing a new entry for the current day.
+    -   **2. Search Diary:** Search for a past entry in your local `Diary.txt` file.
+    -   **3. Exit:** Close the application.
+-   **Writing an Entry:**
+    -   Type your text and press `Enter` for a new line.
+    -   **Hotkeys:** Press `F1` for `[o]` and `F2` for `[x]`.
+    -   Type `quit` and press `Enter` to save and sync.
 
--   **1. Write Diary:** Start writing a new entry for the current day.
--   **2. Search Diary:** Search for a past entry in your local `Diary.txt` file.
--   **3. Exit:** Close the application.
+### Making the App Start Automatically (Recommended)
 
-### Writing a Diary Entry
-
--   Type your thoughts or to-do items and press `Enter` to go to the next line.
--   **Hotkeys:**
-    -   Press `F1` to instantly type `[o] `.
-    -   Press `F2` to instantly type `[x] `.
--   When you are finished, type `quit` on a new line and press `Enter`.
--   Your entry will be saved locally and then a formatted version will be sent to your Google Doc.
-
----
-
-## 🚀 Making the App Start Automatically
-
-To get the full "MorningTodo" experience, you should set the app to launch automatically when your computer starts. Here’s how to do it.
-
-### Step 1: Publish the Application
-
-First, you need to create a standalone, optimized version of the app. Open your terminal or command prompt in the project's root directory and run the following command:
-
-```bash
-dotnet publish -c Release --self-contained
-```
-
-This command will create a `publish` folder inside `bin/Release/netX.X/`. This folder contains the executable file (`MorningTodo.exe` on Windows, `MorningTodo` on macOS) and all its dependencies.
-
-### Step 2: Set Up Autostart for Your OS
-
-Now, follow the instructions for your operating system.
+To get the full experience, set the app to launch automatically when your computer starts.
 
 #### For Windows 
 
-We'll use the Startup folder, which is the easiest method.
-
-1.  Press the **`Win + R`** keys to open the **Run** dialog box.
-2.  Type `shell:startup` and press **Enter**. This will open the Startup folder in File Explorer.
-3.  Navigate to the `publish` folder that was created in Step 1 (e.g., `.../MorningTodo/bin/Release/net8.0/publish/`).
-4.  Right-click on the **`MorningTodo.exe`** file and select **"Create shortcut"**.
-5.  Drag and drop this newly created shortcut into the Startup folder you opened in step 2.
-
-That's it! The next time you log in to Windows, MorningTodo will start automatically.
+1.  Press `Win + R` to open the **Run** dialog.
+2.  Type `shell:startup` and press **Enter** to open the Startup folder.
+3.  In another window, open the `publish` folder you created earlier.
+4.  Right-click on **`BootTodo.exe`** and select **"Create shortcut"**.
+5.  Drag this new shortcut into the **Startup folder**.
 
 #### For macOS
 
-We'll add the application to your Login Items.
+1.  Open **System Settings** > **General** > **Login Items**.
+2.  Click the plus (`+`) button.
+3.  Navigate to the `publish` folder and select the **`BootTodo`** executable file.
+4.  Click **"Add"**.
 
-1.  Open **System Settings** (on macOS Ventura or newer) or **System Preferences** (on older versions).
-2.  Go to **General** > **Login Items** (on newer macOS) or **Users & Groups** > **Login Items** tab (on older macOS).
-3.  Click the plus (`+`) button under the list of applications.
-4.  A file dialog will appear. Navigate to the `publish` folder that was created in Step 1.
-5.  Select the **`MorningTodo`** executable file (it will not have a `.exe` extension) and click **"Add"**.
+---
 
-The application will now appear in the list and will launch automatically whenever you log in.
+## 👨‍💻 For Developers (Optional)
+
+If you have cloned the source code and want to run it directly for development or testing purposes, you can use `dotnet run` from the project's root directory (the one containing the `.csproj` file).
+
+```bash
+# Only for development, from the project root folder
+dotnet run
+```
+
 ## 🤝 Contributing
 
 Contributions are welcome! If you have ideas for new features or improvements, feel free to fork the repository, make your changes, and submit a pull request.
