@@ -27,8 +27,8 @@ This setup involves creating a simple "middleman" using Google Apps Script. This
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/MorningTodo.git
-cd MorningTodo
+git clone https://github.com/your-username/BootTodo.git
+cd BootTodo
 ```
 
 ### 2. Configure Google Docs & Apps Script
