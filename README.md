@@ -125,7 +125,7 @@ After the command finishes, you will find a `publish` folder inside `bin/Release
 1.  Navigate into the `publish` folder using your terminal:
     ```bash
     # Example path - adjust to your actual .NET version
-    cd bin/Release/net8.0/publish
+    cd bin/Release/net8.0/win-x64/publish
     ```
 2.  Run the executable:
     -   **On Windows:** `BootTodo.exe`
